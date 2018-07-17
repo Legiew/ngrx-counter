@@ -17,6 +17,10 @@ export class AppComponent {
 
   constructor(private store: Store<AppState>) {
     this.count$ = store.pipe(select('count'));
+
+    this.count$.subscribe((newCount) => {
+      console.log("New state for count: " + newCount);
+    });
   }
 
   increment() {
