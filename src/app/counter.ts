@@ -5,6 +5,9 @@ export const DECREMENT = 'DECREMENT';
 export const RESET = 'RESET';
 
 export function counterReducer(state: number = 0, action: Action) {
+
+  console.log("Action dispatched: " + action.type);
+
   switch (action.type) {
     case INCREMENT:
       return state + 1;
